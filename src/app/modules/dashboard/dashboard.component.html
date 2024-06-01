@@ -1,0 +1,16 @@
+
+<app-spinner *ngIf="loadingService.isLoading | async; else contentLoadedTemplate" />
+
+<ng-template #contentLoadedTemplate>
+<app-breadcrumb />
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Statistics</h2>
+        </div>
+        <div class="card-body">
+            <p class="card-text">Number of posts: {{ postCount }}</p>
+            <p class="card-text">Number of albums: {{ albumCount }}</p>
+            <p class="card-text">Number of photos: {{ photoCount }}</p>
+        </div>
+    </div>
+</ng-template>

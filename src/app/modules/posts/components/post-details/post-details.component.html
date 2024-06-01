@@ -1,0 +1,13 @@
+<app-spinner *ngIf="loadingService.isLoading | async; else contentLoadedTemplate" />
+
+<ng-template #contentLoadedTemplate>
+    <div *ngIf="post" class="card mt-5">
+        <div class="card-header">
+            <h1 class="card-title">{{ post.title }}</h1>
+            <button (click)="goBack()" class="btn btn-primary">Back</button>
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{ post.body }}</p>
+        </div>
+    </div>
+</ng-template>
