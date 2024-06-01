@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/kami-test",
+    "public": "dist/kami-test/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
