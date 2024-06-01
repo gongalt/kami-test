@@ -37,15 +37,29 @@ export class DataService {
     return this.http.get<Post>(`${this.baseUrl}/posts/${id}`);
   }
 
-  getAlbums(page: number = 1, limit: number = 10): Observable<Album[]> {
-    const params = new HttpParams()
-      .set('_page', page.toString())
-      .set('_limit', limit.toString());
+  getAlbums(
+  page: number = 1,
+  limit: number = 10,
+  searchTerm: string = '',
+  sortField: string = '',
+  sortDirection: string = ''
+): Observable<Album[]> {
+  let params = new HttpParams()
+    .set('_page', page.toString())
+    .set('_limit', limit.toString());
 
-    return this.http.get<Album[]>(`${this.baseUrl}/albums`, { params });
+  if (searchTerm) {
+    params = params.set('q', searchTerm);
   }
 
-  getAlbum(id: number): Observable<Album> {
+  if (sortField && sortDirection) {
+    params = params.set('_sort', sortField).set('_order', sortDirection);
+  }
+
+  return this.http.get<Album[]>(`${this.baseUrl}/albums`, { params });
+}
+
+  getAlbum(id: string | null): Observable<Album> {
     return this.http.get<Album>(`${this.baseUrl}/albums/${id}`);
   }
 

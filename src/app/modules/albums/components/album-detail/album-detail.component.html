@@ -1,0 +1,17 @@
+<app-spinner *ngIf="loadingService.isLoading | async; else contentLoadedTemplate" />
+
+<ng-template #contentLoadedTemplate>
+    <div class="row mb-3">
+        <div class="col">
+            <button (click)="goBack()" class="btn btn-primary">Back</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let album of generateRandomBoxes(album.id)">
+            <div class="card h-100">
+                <div class="card-body" style="height: 100px;"  [style.background-color]="getRandomColor()">
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

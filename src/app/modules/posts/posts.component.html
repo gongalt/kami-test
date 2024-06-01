@@ -1,7 +1,7 @@
+<app-breadcrumb />
 
 <app-spinner *ngIf="loadingService.isLoading | async; else contentLoadedTemplate" />
 
-<app-breadcrumb />
 <ng-template #contentLoadedTemplate>
     <div *ngIf="shouldShowContent">
         <div class="container mt-5">

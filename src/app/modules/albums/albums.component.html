@@ -1,61 +1,51 @@
-<!-- <app-breadcrumb />
-
 <app-spinner *ngIf="loadingService.isLoading | async; else contentLoadedTemplate" />
 
 <app-breadcrumb />
 <ng-template #contentLoadedTemplate>
     <div *ngIf="shouldShowContent">
         <div class="container mt-5">
-            <form class="mb-3" (submit)="onSearch($event, search.value)">
-                <div class="input-group">
-                    <input #search type="text" class="form-control" placeholder="Search posts" aria-label="Search posts">
-                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <form class="mb-3" (submit)="onSearch($event, search.value)">
+                        <div class="input-group">
+                            <input #search type="text" class="form-control" placeholder="Search posts"
+                                aria-label="Search posts">
+                            <button class="btn btn-outline-secondary" type="submit">Search</button>
+                        </div>
+                    </form>
+
+                    <div class="mb-3">
+                        <select class="form-select" (change)="onSortChange($event)">
+                            <option value="">Sort by</option>
+                            <option value="title_asc">Title (A-Z)</option>
+                            <option value="title_desc">Title (Z-A)</option>
+                            <option value="body_asc">Body (A-Z)</option>
+                            <option value="body_desc">Body (Z-A)</option>
+                        </select>
+                    </div>
                 </div>
-            </form>
-
-            <div class="mb-3">
-                <select class="form-select" (change)="onSortChange($event)">
-                  <option value="">Sort by</option>
-                  <option value="title_asc">Title (A-Z)</option>
-                  <option value="title_desc">Title (Z-A)</option>
-                  <option value="body_asc">Body (A-Z)</option>
-                  <option value="body_desc">Body (Z-A)</option>
-                </select>
-              </div>
-
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let post of posts; index as i" (click)="goToPostDetail(post.id)" class="cursor-pointer">
-                        <th scope="row">{{ post.id }}</th>
-                        <td>{{ post.title }}</td>
-                        <td>View Details</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item" [class.disabled]="currentPage === 1">
-                        <a class="page-link" href="#" (click)="$event.preventDefault(); paginate(currentPage - 1)">Previous</a>
-                    </li>
-                    <li class="page-item" *ngFor="let page of pages" [class.active]="page === currentPage">
-                        <a class="page-link" href="#" (click)="$event.preventDefault(); paginate(page)">{{ page }}</a>
-                    </li>
-                    <li class="page-item" [class.disabled]="currentPage === totalPages">
-                        <a class="page-link" href="#" (click)="$event.preventDefault(); paginate(currentPage + 1)">Next</a>
-                    </li>
-                </ul>
-            </nav>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4 cursor-pointer" *ngFor="let album of albums" (click)="gotoAlbumDetail(album.id)">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5 class="card-title">{{ album.title }}</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <span *ngFor="let i of generateRandomBoxes(album.id) | slice:0:4"
+                                    [style.background-color]="getRandomColor()"
+                                    class="random-box"> &nbsp;</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <p class="card-text">{{ album.userId }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-</div>
+    </div>
 
-<router-outlet #outlet="outlet" (activate)="onActivate()" (deactivate)="onDeactivate()"></router-outlet>
+    <router-outlet #outlet="outlet" (activate)="onActivate()" (deactivate)="onDeactivate()"></router-outlet>
 </ng-template>
- -->

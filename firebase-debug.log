@@ -1,0 +1,64 @@
+[debug] [2024-06-01T09:37:20.714Z] ----------------------------------------------------------------------
+[debug] [2024-06-01T09:37:20.715Z] Command:       /Users/adrianjenson/.nvm/versions/node/v18.20.3/bin/node /Users/adrianjenson/.nvm/versions/node/v18.20.3/bin/firebase init
+[debug] [2024-06-01T09:37:20.716Z] CLI Version:   13.10.2
+[debug] [2024-06-01T09:37:20.716Z] Platform:      darwin
+[debug] [2024-06-01T09:37:20.717Z] Node Version:  v18.20.3
+[debug] [2024-06-01T09:37:20.718Z] Time:          Sat Jun 01 2024 17:37:20 GMT+0800 (Philippine Standard Time)
+[debug] [2024-06-01T09:37:20.718Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-06-01T09:37:20.730Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-06-01T09:37:20.731Z] > authorizing via signed-in user (jensonadrian@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/adrianjenson/Projects/kami/kami-test
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-06-01T09:37:50.562Z] > refreshing access token with scopes: []
+[debug] [2024-06-01T09:37:50.570Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-06-01T09:37:50.575Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-06-01T09:37:50.805Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2024-06-01T09:37:50.806Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-06-01T09:37:50.808Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-06-01T09:37:50.991Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 401
+[debug] [2024-06-01T09:37:50.991Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2024-06-01T09:37:50.992Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2024-06-01T09:37:50.994Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (/Users/adrianjenson/.nvm/versions/node/v18.20.3/lib/node_modules/firebase-tools/lib/responseToError.js:49:12)
+    at RetryOperation._fn (/Users/adrianjenson/.nvm/versions/node/v18.20.3/lib/node_modules/firebase-tools/lib/apiv2.js:305:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to list Firebase projects. See firebase-debug.log for more info.
+[debug] [2024-06-01T09:37:57.795Z] ----------------------------------------------------------------------
+[debug] [2024-06-01T09:37:57.796Z] Command:       /Users/adrianjenson/.nvm/versions/node/v18.20.3/bin/node /Users/adrianjenson/.nvm/versions/node/v18.20.3/bin/firebase init
+[debug] [2024-06-01T09:37:57.797Z] CLI Version:   13.10.2
+[debug] [2024-06-01T09:37:57.797Z] Platform:      darwin
+[debug] [2024-06-01T09:37:57.798Z] Node Version:  v18.20.3
+[debug] [2024-06-01T09:37:57.799Z] Time:          Sat Jun 01 2024 17:37:57 GMT+0800 (Philippine Standard Time)
+[debug] [2024-06-01T09:37:57.799Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-06-01T09:37:57.811Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-06-01T09:37:57.812Z] > authorizing via signed-in user (jensonadrian@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/adrianjenson/Projects/kami/kami-test
+
